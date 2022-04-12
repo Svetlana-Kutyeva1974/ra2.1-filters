@@ -1,23 +1,21 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
 
-export default function Toolbar(props) {
+function Toolbar(props) {
    const {filters, selected, onSelectFilter} = props;
    return (
-     <div class="buttons">
-        {filters.map((item, index) =>
-          <button 
-            onClick={evt => onSelectFilter(evt)}// {() => onSelectfilter(item)}
+     <div className='buttons'>
+        {filters.map((item, index) => 
+          <button
+            onClick={(item) => onSelectFilter(item.currentTarget.innerText)}
             key={index}
             value={item}
             type='button'
-            className={item===selected ? selected+' active': selected}
-            >{item}</button>)}
+            className={item===selected ? 'button-selected': 'button'}
+            >{item}
+          </button>
+        )}
      </div>
    );
 }
-Toolbar.propTypes = {
-  filters: PropTypes.array,
-  selected: PropTypes.string,
-  onSelectfilter: PropTypes.func,
-}
+
+export default Toolbar;

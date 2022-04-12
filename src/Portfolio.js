@@ -1,49 +1,44 @@
 
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'; 
+import React, {Component} from 'react'; 
 import Toolbar from './Toolbar';
 import ProjectList from './ProjectList';
 import ImagesList from './ImagesList'
 
 class Portfolio extends Component {
-  static propTypes = {
-    filters: PropTypes.array,
-    state: PropTypes.object,
-  }
+// class Portfolio extends React.Component {
   constructor(props) {
     super(props);
-    this.filter = ["All", "Websites", "Flayers", "Business Cards"];
+    this.filters = ["All", "Websites", "Flayers", "Business Cards"];
     this.listImg = ImagesList;
-    this.state = {selected: 'All'}
+    this.state = {selected: 'All'};
   }
+
   onClickButton(evt) {
-    console.log('statika', this.listImg);
     this.setState({selected: evt});
+    // this.setState(prevState => ({selected: evt}));
   }
 
   onListFilter() {
+    console.log('spisok', this.state,'\n', this.state.selected, '\n',this.listImg);
     return this.state.selected === 'All'
       ? this.listImg
-      : this.listImg.filter((item) => item.category === this.state.selected);
+      : this.listImg.filter(item => item.category === this.state.selected);
   }
   
 render() { 
   return (
-    <div class="main-content">
-      <Toolbar
-        filters={this.filters}
-        selected={this.state.selected}
-        onSelectfilter={(evt) => this.onClickButton(evt)}
-      />
-      <ProjectList projects={this.onListFilter()} />  
-    </div>
-    
+    <>
+      <div className='main-content'>
+        <Toolbar
+          filters={this.filters}
+          selected={this.state.selected}
+          onSelectFilter={evt => this.onClickButton(evt)}
+        />
+        <ProjectList projects={this.onListFilter()} />  
+      </div>
+    </>
   );
 }
 }
-
-/*Portfolio.propTypes = {
-  item: PropTypes.instanceOf(ProjectList).isRequired
-}*/
 
 export default Portfolio;
