@@ -1,5 +1,5 @@
 
-import React, {Component} from 'react'; 
+import React, {Component} from 'react';
 import Toolbar from './Toolbar';
 import ProjectList from './ProjectList';
 import ImagesList from './ImagesList'
@@ -15,7 +15,6 @@ class Portfolio extends Component {
 
   onClickButton(evt) {
     this.setState({selected: evt});
-    // this.setState(prevState => ({selected: evt}));
   }
 
   onListFilter() {
