@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ra2.1-filters/static/css/main.1ec6d37b.css",
+    "main.js": "/ra2.1-filters/static/js/main.7c296be3.js",
+    "index.html": "/ra2.1-filters/index.html",
+    "main.1ec6d37b.css.map": "/ra2.1-filters/static/css/main.1ec6d37b.css.map",
+    "main.7c296be3.js.map": "/ra2.1-filters/static/js/main.7c296be3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1ec6d37b.css",
+    "static/js/main.7c296be3.js"
+  ]
+}
